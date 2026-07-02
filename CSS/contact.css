@@ -1,0 +1,139 @@
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding-top: 2rem;
+}
+
+.contact-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-title span {
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.contact-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 3rem;
+    max-width: 500px;
+}
+
+.info-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.info-label {
+    font-family: var(--font-code);
+    color: var(--accent-secondary);
+    font-size: 0.85rem;
+}
+
+.info-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+    align-self: flex-start;
+}
+
+.info-link:hover {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent-glow);
+}
+
+.tech-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.submit-btn {
+    background-color: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-code);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent);
+    color: var(--bg-main);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.form-status-message {
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.form-status-message.success {
+    color: #10b981;
+}
+
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-title {
+        font-size: 2.5rem;
+    }
+}

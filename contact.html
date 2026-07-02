@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Vince Bahri</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
+</head>
+
+<body>
+
+    <header class="header-nav">
+        <div class="container nav-container">
+            <a href="./index.html" class="logo">&lt;vince.dev /&gt;</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./work.html">Work</a></li>
+                    <li><a href="./contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container contact-layout">
+
+        <section class="contact-info">
+            <h1 class="contact-title">Start een <span>Connectie</span></h1>
+            <p class="contact-subtitle">
+                Heb je een vraag over mijn projecten, wil je sparren over software security en testing, of gewoon
+                netwerken? Laat een bericht achter of bereik me direct via mijn kanalen.
+            </p>
+
+            <div class="info-channels">
+                <div class="info-item">
+                    <span class="info-label">// Email</span>
+                    <a href="mailto:vince.arino.bahri@example.com" class="info-link">vince.bahri@example.com</a>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">// Netwerk</span>
+                    <a href="https://github.com" class="info-link" target="_blank" rel="noopener">GitHub Profiel</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-container">
+            <form id="portfolio-contact-form" class="tech-form">
+                <div class="form-group">
+                    <label for="form-name">Naam</label>
+                    <input type="text" id="form-name" name="name" required placeholder="Je naam">
+                </div>
+
+                <div class="form-group">
+                    <label for="form-email">Email</label>
+                    <input type="email" id="form-email" name="email" required placeholder="je.email@voorbeeld.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="form-message">Bericht</label>
+                    <textarea id="form-message" name="message" rows="5" required
+                        placeholder="Type hier je bericht..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Verstuur Bericht_</button>
+                <div id="form-status" class="form-status-message"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Vince Bahri. Built from scratch.</p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
