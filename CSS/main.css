@@ -1,32 +1,20 @@
-/* ==========================================================================
-   GLOBAL VARIABLES & TECH THEME
-   ========================================================================== */
 :root {
     --bg-main: #050103;
-    /* Gitzwart met een minimale rode ondertoon */
     --bg-card: #0d0407;
-    /* Iets lichter paneel voor je kaarten en formulieren */
     --accent: #ff003c;
-    /* Hard neon-crimson rood (de hoofd-cyberpunk kleur) */
     --accent-glow: rgba(255, 0, 60, 0.35);
     --accent-secondary: #ff5500;
-    /* Neon oranje voor secundaire tech-accenten */
 
     --text-main: #eceff4;
-    /* Vlijmscherp wit/grijs voor tekst */
     --text-muted: #6b7280;
-    /* Donkerder grijs voor secundaire tech-data */
     --border: #260811;
-    /* Donkerrode, scherpe borders */
 
     --font-code: 'Fira Code', 'Courier New', monospace;
     --font-sans: 'Inter', system-ui, sans-serif;
 
     --max-width: 1100px;
-    /* FIX: Toegevoegd zodat je container netjes centreert */
 }
 
-/* Base Reset (Hoor bovenaan te staan) */
 *,
 *::before,
 *::after {
@@ -42,7 +30,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 
-    /* MOUSE GLOW EFFECT OVERLAY */
+    /* MOUSE GLOW EFFECT */
     background-image: radial-gradient(600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
             rgba(255, 0, 60, 0.04) 0%,
             transparent 80%);
@@ -56,13 +44,10 @@ body {
     padding: 0 1.5rem;
 }
 
-/* ==========================================================================
-   NAVIGATION BAR
-   ========================================================================== */
+/* NAVBAR STYLING */
 .header-nav {
     border-bottom: 1px solid var(--border);
     background-color: rgba(5, 1, 3, 0.8);
-    /* FIX: Blauw vervangen door transparant cyberpunk zwart */
     backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
@@ -109,13 +94,10 @@ body {
     padding-bottom: 4px;
 }
 
-/* ==========================================================================
-   HERO LAYOUT & PROFILE IMAGE (Nieuw toegevoegd voor de splitsing)
-   ========================================================================== */
+/* HERO STYLING */
 .hero-layout {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
-    /* Splits de layout: links tekst, rechts foto */
     gap: 4rem;
     align-items: center;
     margin-bottom: 3rem;
@@ -130,7 +112,6 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Koppen krijgen de felle gloed */
 h1 span,
 .hero-section h1 span {
     color: var(--accent);
@@ -149,7 +130,6 @@ h1 span,
     align-items: center;
 }
 
-/* Scherpe cyberpunk fotolijst */
 .profile-frame {
     position: relative;
     width: 280px;
@@ -180,9 +160,6 @@ h1 span,
     filter: grayscale(0%) contrast(115%);
 }
 
-/* ==========================================================================
-   REUSABLE COMPONENTS (Cards & Grids)
-   ========================================================================== */
 .overview-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -190,7 +167,6 @@ h1 span,
     margin-top: 2rem;
 }
 
-/* FIX: Volledig samengevoegd tot één schone definitie zonder dubbele code of !important */
 .tech-card,
 .project-card,
 .tech-form {
@@ -215,9 +191,6 @@ h1 span,
     margin-bottom: 1rem;
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
 footer {
     border-top: 1px solid var(--border);
     padding: 2rem 0;
@@ -228,12 +201,7 @@ footer {
     color: var(--text-muted);
 }
 
-/* ==========================================================================
-   RESPONSIVENESS
-   ========================================================================== */
 @media (max-width: 768px) {
-
-    /* FIX: Op mobiel klapt de hero-layout nu keurig onder elkaar */
     .hero-layout {
         grid-template-columns: 1fr;
         gap: 2rem;

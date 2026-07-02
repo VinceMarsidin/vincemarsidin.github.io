@@ -47,7 +47,6 @@
     color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
-    flex-grow: 1;
 }
 
 .project-tech-list {
@@ -76,6 +75,7 @@
     font-weight: 600;
     transition: color 0.2s ease, padding-left 0.2s ease;
     align-self: flex-start;
+    margin-top: auto;
 }
 
 .project-link:hover {
@@ -93,5 +93,3 @@
         padding: 1.75rem;
     }
 }
-
-/* test  */
