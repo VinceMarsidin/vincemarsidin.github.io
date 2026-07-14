@@ -12,6 +12,8 @@
     --font-code: 'Fira Code', 'Courier New', monospace;
     --font-sans: 'Inter', system-ui, sans-serif;
 
+    /* --font-sans: var(--font-main);
+    --font-code: var(--font-main); */
     --max-width: 1100px;
 }
 
@@ -44,7 +46,6 @@ body {
     padding: 0 1.5rem;
 }
 
-/* NAVBAR STYLING */
 .header-nav {
     border-bottom: 1px solid var(--border);
     background-color: rgba(5, 1, 3, 0.8);
@@ -94,7 +95,6 @@ body {
     padding-bottom: 4px;
 }
 
-/* HERO STYLING */
 .hero-layout {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -124,6 +124,10 @@ h1 span,
     max-width: 600px;
 }
 
+
+
+
+/* PROFILE PICTURE STYLING */
 .hero-image-container {
     display: flex;
     justify-content: center;
@@ -142,6 +146,11 @@ h1 span,
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.profile-frame:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
 .profile-img {
     width: 100%;
     height: 100%;
@@ -151,15 +160,47 @@ h1 span,
     transition: filter 0.3s ease;
 }
 
-.profile-frame:hover {
-    border-color: var(--accent);
-    box-shadow: 0 0 20px var(--accent-glow);
+.profile-frame:hover .profile-img {
+    filter: grayscale(20%) contrast(120%) brightness(100%);
+    transform: scale(1.03);
+}
+
+/* .profile-frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff0055 0%, #00ffcc 100%);
+    mix-blend-mode: screen;
+    opacity: 0.85;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+} */
+
+/* .profile-frame:hover::after {
+    opacity: 0.3;
+} */
+
+.profile-telemetry {
+    position: absolute;
+    bottom: 8px;
+    left: 12px;
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    color: #ff0202;
+    z-index: 10;
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.5);
+    opacity: 0.8;
 }
 
 .profile-frame:hover .profile-img {
     filter: grayscale(0%) contrast(115%);
 }
 
+
+/* Overview Grid */
 .overview-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -183,12 +224,235 @@ h1 span,
     transform: translateY(-4px);
     border-color: var(--accent);
     box-shadow: 0 0 15px rgba(255, 0, 60, 0.15);
+
+    /* Cyberpunk "Clipped Corner" Borders */
+    border-radius: 0 !important;
+    /* Links + rechts */
+    clip-path: polygon(0px 0px,
+            calc(100% - 15px) 0px,
+            100% 15px,
+            100% 100%,
+            15px 100%,
+            0px calc(100% - 15px));
 }
 
 .card-title {
     color: var(--accent);
     font-family: var(--font-code);
     margin-bottom: 1rem;
+}
+
+
+
+
+
+
+/* Het Cyberpunk Matrix Duotone Filter */
+.timeline-img,
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* Stap 1: Zet de foto om naar zwart-wit met hoog contrast */
+    filter: grayscale(100%) contrast(140%) brightness(90%);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* De magische kleur-overlay */
+.timeline-media,
+.project-media {
+    position: relative;
+    background-color: #030712;
+    /* Diep donkerblauwe basis */
+    overflow: hidden;
+}
+
+/* We plaatsen een neon-kleurengradient over de foto met een blend-mode */
+.timeline-media::after,
+.project-media::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient van Neon Magenta naar Neon Cyan */
+    background: linear-gradient(135deg, #ff0055 0%, #00ffcc 100%);
+    mix-blend-mode: screen;
+    /* Blend de kleuren met de grijswaarden van de foto */
+    opacity: 0.85;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover-effect: de echte kleuren komen subtiel terug en de glow activeert */
+.timeline-item:hover .timeline-img,
+.project-card:hover .project-img {
+    filter: grayscale(20%) contrast(120%) brightness(100%);
+    transform: scale(1.05);
+}
+
+.timeline-item:hover .timeline-media::after,
+.project-card:hover .project-media::after {
+    opacity: 0.4;
+    /* Kleuren-overlay zwakt af op hover zodat de foto tot leven komt */
+}
+
+
+/* Het  CRT Monitor Scanlines Overlay Effect */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 9999;
+    /* Zorg dat het over alles heen ligt */
+    background-size: 100% 4px, 6px 100%;
+    /* Maakt de lijntjes heel fijn */
+    pointer-events: none;
+    /* Zorg dat de gebruiker nog steeds overal op kan klikken! */
+    opacity: 0.45;
+    /* Heel subtiel houden zodat het niet irritant wordt */
+}
+
+/* Optioneel: Een zachte, pulserende flickerrand (vignette) op het scherm */
+body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 9998;
+    pointer-events: none;
+}
+
+
+/* Pure CSS Glitch Effect */
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-main);
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff0055;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00ffcc, 0 2px #00ffcc;
+    clip: rect(85px, 450px, 140px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(31px, 9999px, 94px, 0);
+    }
+
+    10% {
+        clip: rect(112px, 9999px, 76px, 0);
+    }
+
+    20% {
+        clip: rect(85px, 9999px, 5px, 0);
+    }
+
+    30% {
+        clip: rect(27px, 9999px, 115px, 0);
+    }
+
+    40% {
+        clip: rect(73px, 9999px, 29px, 0);
+    }
+
+    50% {
+        clip: rect(118px, 9999px, 142px, 0);
+    }
+
+    60% {
+        clip: rect(9px, 9999px, 55px, 0);
+    }
+
+    70% {
+        clip: rect(64px, 9999px, 109px, 0);
+    }
+
+    80% {
+        clip: rect(3px, 9999px, 122px, 0);
+    }
+
+    90% {
+        clip: rect(131px, 9999px, 88px, 0);
+    }
+
+    100% {
+        clip: rect(45px, 9999px, 5px, 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(76px, 9999px, 116px, 0);
+    }
+
+    11% {
+        clip: rect(4px, 9999px, 64px, 0);
+    }
+
+    22% {
+        clip: rect(122px, 9999px, 34px, 0);
+    }
+
+    33% {
+        clip: rect(90px, 9999px, 112px, 0);
+    }
+
+    44% {
+        clip: rect(13px, 9999px, 85px, 0);
+    }
+
+    55% {
+        clip: rect(115px, 9999px, 4px, 0);
+    }
+
+    66% {
+        clip: rect(54px, 9999px, 131px, 0);
+    }
+
+    77% {
+        clip: rect(9999px, 9999px, 9px, 0);
+    }
+
+    88% {
+        clip: rect(12px, 9999px, 84px, 0);
+    }
+
+    100% {
+        clip: rect(141px, 9999px, 53px, 0);
+    }
 }
 
 footer {
