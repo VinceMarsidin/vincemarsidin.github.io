@@ -254,22 +254,18 @@ h1 span,
     height: 100%;
     object-fit: cover;
 
-    /* Stap 1: Zet de foto om naar zwart-wit met hoog contrast */
     filter: grayscale(100%) contrast(140%) brightness(90%);
     position: relative;
     transition: all 0.3s ease;
 }
 
-/* De magische kleur-overlay */
 .timeline-media,
 .project-media {
     position: relative;
     background-color: #030712;
-    /* Diep donkerblauwe basis */
     overflow: hidden;
 }
 
-/* We plaatsen een neon-kleurengradient over de foto met een blend-mode */
 .timeline-media::after,
 .project-media::after {
     content: '';
@@ -278,16 +274,13 @@ h1 span,
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradient van Neon Magenta naar Neon Cyan */
     background: linear-gradient(135deg, #ff0055 0%, #00ffcc 100%);
     mix-blend-mode: screen;
-    /* Blend de kleuren met de grijswaarden van de foto */
     opacity: 0.85;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
-/* Hover-effect: de echte kleuren komen subtiel terug en de glow activeert */
 .timeline-item:hover .timeline-img,
 .project-card:hover .project-img {
     filter: grayscale(20%) contrast(120%) brightness(100%);
@@ -297,11 +290,9 @@ h1 span,
 .timeline-item:hover .timeline-media::after,
 .project-card:hover .project-media::after {
     opacity: 0.4;
-    /* Kleuren-overlay zwakt af op hover zodat de foto tot leven komt */
 }
 
 
-/* Het  CRT Monitor Scanlines Overlay Effect */
 body::before {
     content: " ";
     display: block;
@@ -313,16 +304,11 @@ body::before {
     background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
         linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
     z-index: 9999;
-    /* Zorg dat het over alles heen ligt */
     background-size: 100% 4px, 6px 100%;
-    /* Maakt de lijntjes heel fijn */
     pointer-events: none;
-    /* Zorg dat de gebruiker nog steeds overal op kan klikken! */
     opacity: 0.45;
-    /* Heel subtiel houden zodat het niet irritant wordt */
 }
 
-/* Optioneel: Een zachte, pulserende flickerrand (vignette) op het scherm */
 body::after {
     content: " ";
     display: block;
