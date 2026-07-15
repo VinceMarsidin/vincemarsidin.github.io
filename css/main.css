@@ -392,10 +392,12 @@ h1 span,
     left: 12px;
     font-family: var(--font-code);
     font-size: 0.7rem;
-    color: #ff0202;
+    color: #00ffcc;
     z-index: 10;
-    text-shadow: 0 0 5px var(--accent-glow);
     opacity: 0.8;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 4px rgba(255, 255, 255, 0.9);
+
 }
 
 /* Later terug zal ik terug komen op deze 2 lijnen voor reavaliuation */
