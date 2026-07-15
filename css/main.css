@@ -177,9 +177,9 @@ h1 span,
     opacity: 0.85;
     pointer-events: none;
     transition: opacity 0.3s ease;
-} */
+}
 
-/* .profile-frame:hover::after {
+.profile-frame:hover::after {
     opacity: 0.3;
 } */
 
