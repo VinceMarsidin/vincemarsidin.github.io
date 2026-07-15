@@ -85,4 +85,37 @@ document.addEventListener('DOMContentLoaded', () => {
             sessionStorage.setItem('hasBooted', 'true');
         }
     }
+
+    // TYPEWRITER EFFECT
+    const typewriterEl = document.getElementById('typewriter-text');
+
+    if (typewriterEl) {
+        const fullText = typewriterEl.getAttribute('data-full-text');
+        let charIndex = 0;
+
+        const startTyping = () => {
+            typewriterEl.classList.add('typing');
+
+            const typeChar = () => {
+                if (charIndex < fullText.length) {
+                    typewriterEl.textContent = fullText.slice(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(typeChar, 20); // typesnelheid in ms per karakter
+                } else {
+                    // Klaar met typen: cursor stopt met knipperen na een korte pauze
+                    setTimeout(() => {
+                        typewriterEl.classList.remove('typing');
+                    }, 1500);
+                }
+            };
+
+            typeChar();
+        };
+
+        // Wacht tot de boot-sequence klaar is voordat het typen begint
+        const hasBooted = sessionStorage.getItem('hasBooted');
+        const startDelay = hasBooted ? 200 : 1700; // korter wachten als boot-screen is overgeslagen
+
+        setTimeout(startTyping, startDelay);
+    }
 });
