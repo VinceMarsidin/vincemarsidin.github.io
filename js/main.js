@@ -100,9 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (charIndex < fullText.length) {
                     typewriterEl.textContent = fullText.slice(0, charIndex + 1);
                     charIndex++;
-                    setTimeout(typeChar, 20); // typesnelheid in ms per karakter
+                    setTimeout(typeChar, 20);
                 } else {
-                    // Klaar met typen: cursor stopt met knipperen na een korte pauze
                     setTimeout(() => {
                         typewriterEl.classList.remove('typing');
                     }, 1500);
@@ -112,10 +111,39 @@ document.addEventListener('DOMContentLoaded', () => {
             typeChar();
         };
 
-        // Wacht tot de boot-sequence klaar is voordat het typen begint
         const hasBooted = sessionStorage.getItem('hasBooted');
-        const startDelay = hasBooted ? 200 : 1700; // korter wachten als boot-screen is overgeslagen
+        const startDelay = hasBooted ? 200 : 1700;
 
         setTimeout(startTyping, startDelay);
+    }
+
+    /* SCROLL PROGRESS BAR */
+    const scrollProgress = document.getElementById('scroll-progress');
+
+    if (scrollProgress) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+            scrollProgress.style.width = `${scrollPercent}%`;
+        });
+    }
+
+    /* BACK TO TOP BUTTON */
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
 });
