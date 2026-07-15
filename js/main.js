@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Tech portfolio succesvol geladen. System operational.");
 
+
     // MOUSE GLOW COORDINATES INJECTOR
     document.addEventListener('mousemove', (e) => {
         document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
         document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
     });
+
 
     // CONTACT FORM HANDLER
     const contactForm = document.getElementById('portfolio-contact-form');
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1000);
         });
     }
+
 
     // HAMBURGER MENU CONTROLLER
     const menuToggle = document.querySelector('.menu-toggle');
@@ -54,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
     // ACTIVE PAGE DETECTOR (navigatie highlight)
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -62,4 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkPage = link.getAttribute('href').replace('./', '');
         link.classList.toggle('active', linkPage === currentPage);
     });
+
+
+    // BOOT SEQUENCE CONTROLLER
+    const bootScreen = document.getElementById('boot-screen');
+
+    if (bootScreen) {
+        const hasBooted = sessionStorage.getItem('hasBooted');
+
+        if (hasBooted) {
+            // Al eerder gezien in deze sessie: overlay meteen verbergen, geen animatie
+            bootScreen.classList.add('hidden');
+        } else {
+            // Eerste bezoek: toon de boot-sequence en onthoud dit voor de rest van de sessie
+            setTimeout(() => {
+                bootScreen.classList.add('hidden');
+            }, 1600);
+            sessionStorage.setItem('hasBooted', 'true');
+        }
+    }
 });

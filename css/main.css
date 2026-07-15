@@ -50,6 +50,95 @@ body {
 }
 
 
+/* BOOT SEQUENCE OVERLAY */
+#boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-main);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#boot-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: none;
+}
+
+.boot-content {
+    font-family: var(--font-code);
+    text-align: left;
+}
+
+.boot-line {
+    color: var(--accent);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    text-shadow: 0 0 8px var(--accent-glow);
+    animation: boot-line-appear 0.3s ease forwards;
+}
+
+.boot-line:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.boot-line:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.boot-line:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes boot-line-appear {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.boot-bar {
+    width: 220px;
+    height: 3px;
+    background-color: var(--border);
+    overflow: hidden;
+}
+
+.boot-bar-fill {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
+    animation: boot-bar-load 1.5s ease forwards;
+}
+
+@keyframes boot-bar-load {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+
 /* HEADER + NAVBAR */
 .header-nav {
     border-bottom: 1px solid var(--border);
