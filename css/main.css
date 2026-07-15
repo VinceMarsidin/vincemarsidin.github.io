@@ -442,10 +442,7 @@ h1 span,
     transform: translateY(-4px);
     border-color: var(--accent);
     box-shadow: 0 0 15px rgba(255, 0, 60, 0.15);
-
-    /* Cyberpunk "Clipped Corner" Borders */
     border-radius: 0 !important;
-    /* Links + rechts */
     clip-path: polygon(0px 0px,
             calc(100% - 15px) 0px,
             100% 15px,
@@ -460,6 +457,26 @@ h1 span,
     margin-bottom: 1rem;
 }
 
+/* SECTION LABELS */
+.section-label {
+    font-family: var(--font-code);
+    color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-label::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+}
 
 /* ERROR PAGE (404) */
 .error-page {
