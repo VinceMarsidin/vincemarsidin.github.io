@@ -1,13 +1,24 @@
 .contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
     gap: 4rem;
-    padding-top: 2rem;
 }
+
+.contact-row {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: stretch;
+}
+
+
+
 
 .contact-title {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 .contact-title span {
@@ -18,9 +29,121 @@
 .contact-subtitle {
     color: var(--text-muted);
     font-size: 1.05rem;
-    margin-bottom: 3rem;
-    max-width: 500px;
+    margin-bottom: 2rem;
+    max-width: 550px;
+    line-height: 1.6;
 }
+
+
+.contact-media {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background-color: #030712;
+    border: 1px solid var(--border);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.3s ease;
+}
+
+.contact-media:hover {
+    border-color: var(--accent);
+}
+
+.contact-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%) contrast(130%) brightness(85%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.contact-media:hover .contact-img {
+    filter: grayscale(30%) contrast(115%) brightness(100%);
+    transform: scale(1.03);
+}
+
+/* rainbox overlay */
+/* .contact-media::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff0055 0%, #00f0ff 100%);
+    mix-blend-mode: screen;
+    opacity: 0.8;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.contact-media:hover::after {
+    opacity: 0.35;
+} */
+
+/* Telemetrie Tekst op de Afbeelding */
+.contact-telemetry {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-family: var(--font-code);
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: #00ffcc;
+    opacity: 0.7;
+    z-index: 10;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+
+
+/* SOCIALS INFO */
+.info-channels {
+    width: 100%;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem 2rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.info-label {
+    font-family: var(--font-code);
+    color: var(--accent);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-family: var(--font-sans);
+    transition: color 0.2s ease, text-shadow 0.2s ease, padding-left 0.2s ease;
+    align-self: flex-start;
+}
+
+.info-link:hover {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent-glow);
+    padding-left: 4px;
+}
+
+
 
 .info-channels {
     display: flex;
@@ -53,6 +176,80 @@
     text-shadow: 0 0 8px var(--accent-glow);
 }
 
+
+.contact-picture-large {
+    display: flex;
+    width: 100%;
+    min-height: 320px;
+}
+
+.cyber-image-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #030712;
+    border: 1px solid var(--border);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cyber-image-frame:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.cyber-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%) contrast(140%) brightness(80%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.cyber-image-frame:hover .cyber-img {
+    filter: grayscale(30%) contrast(115%) brightness(100%);
+    transform: scale(1.04);
+}
+
+/* Cyber-duotone screen overlay */
+.cyber-image-frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(135deg, #ff0055 0%, #00ffcc 100%); */
+    mix-blend-mode: screen;
+    opacity: 0.8;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.cyber-image-frame:hover::after {
+    opacity: 0.35;
+}
+
+.cyber-image-telemetry {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #00ffcc;
+    z-index: 10;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+
+
+/* FORM */
 .tech-form {
     display: flex;
     flex-direction: column;
@@ -127,13 +324,31 @@
     color: #10b981;
 }
 
+
+
+/* RESPONSIVENESS */
 @media (max-width: 900px) {
-    .contact-layout {
+    .contact-dashboard {
+        gap: 2.5rem;
+    }
+
+    .contact-row {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
     }
 
     .contact-title {
         font-size: 2.5rem;
     }
+
+    .contact-picture-large {
+        min-height: 240px;
+        height: 240px;
+    }
+
+    .contact-form-container {
+        padding: 2rem 1.5rem;
+    }
+
+
 }
