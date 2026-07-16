@@ -16,9 +16,10 @@
 
 
 .contact-title {
-    font-size: 3rem;
+    font-size: clamp(1.75rem, 3.2vw, 2.75rem);
     margin-bottom: 1.5rem;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .contact-title span {
@@ -334,7 +335,8 @@
     }
 
     .contact-title {
-        font-size: 2.5rem;
+        white-space: normal;
+        font-size: clamp(1.5rem, 5vw, 2.25rem);
     }
 
     .contact-picture-large {
