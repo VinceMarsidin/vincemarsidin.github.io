@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Tech portfolio succesvol geladen. System operational.");
+    console.log('%c> SYSTEM ACCESS DETECTED', 'color: #ff003c; font-family: monospace; font-size: 20px; font-weight: bold;');
+    console.log('%cHey, nieuwsgierige developer! Leuk dat je een kijkje neemt onder de motorkap.', 'color: #94a3b8; font-family: monospace; font-size: 12px;');
+    console.log('%cAls je op zoek bent naar een stagiair die dit soort details waardeert — mijn contactgegevens staan op /contact.html', 'color: #eceff4; font-family: monospace; font-size: 12px;');
 
 
     // MOUSE GLOW COORDINATES INJECTOR
