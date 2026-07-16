@@ -47,25 +47,46 @@
     </header>
 
     <main class="container">
+
         <section class="hero-section">
-            <h1>Mijn <span>Projecten</span></h1>
-            <p class="hero-subtitle">Een selectie van academische projecten en technische tooling waaraan ik heb
-                gewerkt.</p>
+            <div class="work-hero-layout">
+                <div class="work-hero-text">
+                    <h1 class="glitch" data-text="Mijn Projecten">Mijn <span>Projecten</span></h1>
+                    <p class="hero-subtitle">Een selectie van academische projecten en technische tooling waaraan ik heb
+                        gewerkt.</p>
+                </div>
+
+                <div class="terminal-widget">
+                    <div class="terminal-header">
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-title">access_terminal.exe</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="terminal-line">&gt; connecting to database<span class="dots"></span></p>
+                        <p class="terminal-line">&gt; access: <span class="terminal-highlight">GRANTED</span></p>
+                        <p class="terminal-line">&gt; loading projects<span class="dots"></span></p>
+                        <p class="terminal-line terminal-cursor-line">&gt; <span class="term-cursor">▋</span></p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="project-wrapper">
             <p class="section-label">// 01 — Projecten</p>
             <div class="project-grid">
                 <article class="project-card">
+                    <div class="project-media">
+                        <img src="./img/projects/verzekerslimv1.jpg" alt="VerzekerSlim interface" class="project-img"
+                            loading="lazy">
+                    </div>
                     <div class="project-content">
                         <span class="project-tag">Website</span>
                         <h3 class="project-title">VerzekerSlim</h3>
                         <p class="project-description">
                             VerzekerSlim is in de kern een onafhankelijke, digitale vergelijking- en beheersite voor de
-                            Surinaamse verzekeringsmarkt. Het platform overbrugt de kloof tussen de consument (die
-                            transparantie zoekt) en de beheerder/tussenpersoon (die tarieven actueel moet houden),
-                            opgebouwd
-                            rondom twee grote pijlers. Het Consumentenplatform en Het Beheerdersdashboard
+                            Surinaamse verzekeringsmarkt...
                         </p>
                         <ul class="project-tech-list">
                             <li>HTML</li>
@@ -77,12 +98,15 @@
                             <li>SQLite</li>
                         </ul>
                         <a href="https://github.com/VinceMarsidin/verzeker-slim" class="project-link"
-                            target="_blank">Bekijk
-                            Repository &rarr;</a>
+                            target="_blank">Bekijk Repository &rarr;</a>
                     </div>
                 </article>
 
                 <article class="project-card">
+                    <div class="project-media">
+                        <img src="./img/projects/portfolio.jpg" alt="Screenshot of the portfolio website"
+                            class="project-img" loading="lazy">
+                    </div>
                     <div class="project-content">
                         <span class="project-tag">Website</span>
                         <h3 class="project-title">Portfolio Website</h3>
@@ -105,6 +129,9 @@
                 </article>
 
                 <article class="project-card">
+                    <div class="project-media project-media-placeholder">
+                        <span class="placeholder-text">// IN_DEVELOPMENT</span>
+                    </div>
                     <div class="project-content">
                         <span class="project-tag">Website</span>
                         <h3 class="project-title">[Updated] VerzekerSlim</h3>
@@ -133,6 +160,9 @@
                 </article>
 
                 <article class="project-card">
+                    <div class="project-media project-media-placeholder">
+                        <span class="placeholder-text">// IN_DEVELOPMENT</span>
+                    </div>
                     <div class="project-content">
                         <span class="project-tag">COMING SOON!</span>
                         <h3 class="project-title">Rogue-Lite Dev Trivia (Browser-Based RPG)</h3>
