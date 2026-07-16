@@ -146,4 +146,27 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    /* READ-COMPLETE TOAST */
+    const readToast = document.getElementById('read-complete-toast');
+
+    if (readToast) {
+        const footer = document.querySelector('footer');
+        let hasShown = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasShown) {
+                    hasShown = true;
+                    readToast.classList.add('visible');
+
+                    setTimeout(() => {
+                        readToast.classList.remove('visible');
+                    }, 4000);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(footer);
+    }
 });
