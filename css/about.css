@@ -69,7 +69,6 @@
     text-align: justify;
 }
 
-/* HOBBY GRID */
 .hobby-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -141,9 +140,6 @@
     padding-bottom: 0.5rem;
 }
 
-/* ==========================================================================
-   SCANNER WIDGET
-   ========================================================================== */
 .scanner-widget {
     display: flex;
     flex-direction: column;
@@ -246,7 +242,6 @@
     flex-shrink: 0;
 }
 
-/* CV BUTTON */
 .cv-description {
     color: var(--text-muted);
     font-size: 0.85rem;
@@ -437,9 +432,6 @@
     text-shadow: 0 0 5px var(--accent-glow);
 }
 
-/* ==========================================================================
-   READ-COMPLETE TOAST
-   ========================================================================== */
 .toast {
     position: fixed;
     bottom: 2rem;

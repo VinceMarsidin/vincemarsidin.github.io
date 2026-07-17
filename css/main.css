@@ -42,8 +42,6 @@ body {
     padding: 0 1.5rem;
 }
 
-
-/* BOOT SEQUENCE OVERLAY */
 #boot-screen {
     position: fixed;
     top: 0;
@@ -108,7 +106,6 @@ body {
     animation: boot-bar-load 1.5s ease forwards;
 }
 
-/* SCROLL PROGRESS INDICATOR */
 #scroll-progress {
     position: fixed;
     top: 0;
@@ -121,7 +118,6 @@ body {
     transition: width 0.1s ease-out;
 }
 
-/* BACK TO TOP BUTTON */
 #back-to-top {
     position: fixed;
     bottom: 2rem;
@@ -167,7 +163,6 @@ body {
     }
 }
 
-/* HEADER + NAVBAR */
 .header-nav {
     border-bottom: 1px solid var(--border);
     background-color: rgba(5, 1, 3, 0.8);
@@ -218,8 +213,6 @@ body {
     padding-bottom: 4px;
 }
 
-
-/* HAMBURGER MENU */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -299,8 +292,6 @@ body {
     }
 }
 
-
-/* HERO */
 .hero-layout {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -338,9 +329,6 @@ h1 span,
     margin-left: 2px;
 }
 
-
-
-/* PROFIELFOTO */
 .hero-image-container {
     display: flex;
     justify-content: center;
@@ -392,27 +380,6 @@ h1 span,
 
 }
 
-/* Later terug zal ik terug komen op deze 2 lijnen voor reavaliuation */
-/* .profile-frame::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #ff0055 0%, #00ffcc 100%);
-    mix-blend-mode: screen;
-    opacity: 0.85;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.profile-frame:hover::after {
-    opacity: 0.3;
-} */
-
-
-/* SECTION WRAPPERS SPACING */
 .overview-grid-wrapper,
 .current-status-wrapper,
 .project-wrapper,
@@ -420,7 +387,6 @@ h1 span,
     margin-bottom: 5rem;
 }
 
-/* OVERVIEW GRID + CARDS */
 .overview-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -452,7 +418,6 @@ h1 span,
     margin-bottom: 1rem;
 }
 
-/* SECTION LABELS */
 .section-label {
     font-family: var(--font-code);
     color: var(--accent);
@@ -473,8 +438,6 @@ h1 span,
     background: linear-gradient(90deg, var(--border), transparent);
 }
 
-
-/* CURRENT STATUS */
 .status-widget {
     background-color: var(--bg-card);
     border: 1px solid var(--border);
@@ -531,8 +494,6 @@ h1 span,
     }
 }
 
-
-/* ERROR PAGE (404) */
 .error-page {
     min-height: calc(100vh - 4.5rem - 100px);
     display: flex;
@@ -592,9 +553,6 @@ h1 span,
     box-shadow: 0 0 15px var(--accent);
 }
 
-
-
-/* CRT SCANLINES OVERLAY */
 body::before {
     content: " ";
     display: block;
@@ -624,8 +582,6 @@ body::after {
     pointer-events: none;
 }
 
-
-/* BACKGROUND GRID DRIFT */
 .bg-grid {
     position: fixed;
     top: -40px;
@@ -651,8 +607,6 @@ body::after {
     }
 }
 
-
-/* EASTER EGG: KONAMI CODE */
 .easter-egg-active {
     animation: egg-flash 0.3s ease;
 }
@@ -669,8 +623,6 @@ body::after {
     }
 }
 
-
-/* EASTER EGG: VIDEO MODAL */
 .egg-modal {
     position: fixed;
     top: 0;
@@ -763,9 +715,6 @@ body::after {
     height: 100%;
 }
 
-
-
-/* GLITCH TEXT EFFECT */
 .glitch {
     position: relative;
 }
@@ -882,8 +831,6 @@ body::after {
     }
 }
 
-
-/* BOOT SEQUENCE ANIMATIONS */
 @keyframes boot-line-appear {
     from {
         opacity: 0;
@@ -918,8 +865,6 @@ body::after {
     }
 }
 
-
-/* FOOTER */
 footer {
     border-top: 1px solid var(--border);
     padding: 2rem 0;
@@ -930,7 +875,6 @@ footer {
     color: var(--text-muted);
 }
 
-/* RESPONSIVENESS  */
 @media (max-width: 768px) {
     .hero-layout {
         grid-template-columns: 1fr;
