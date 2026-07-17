@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('%c> SYSTEM ACCESS DETECTED', 'color: #ff003c; font-family: monospace; font-size: 20px; font-weight: bold;');
-    console.log('%cHey, nieuwsgierige developer! Leuk dat je een kijkje neemt onder de motorkap.', 'color: #94a3b8; font-family: monospace; font-size: 12px;');
-    console.log('%cAls je op zoek bent naar een stagiair die dit soort details waardeert — mijn contactgegevens staan op /contact.html', 'color: #eceff4; font-family: monospace; font-size: 12px;');
-
-
     // MOUSE GLOW COORDINATES INJECTOR
     document.addEventListener('mousemove', (e) => {
         document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
@@ -171,4 +166,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(footer);
     }
+
+    /* EASTER EGG: CONSOLE MESSAGE */
+    console.log('%c> SYSTEM ACCESS DETECTED', 'color: #ff003c; font-family: monospace; font-size: 20px; font-weight: bold;');
+    console.log('%cHey, nieuwsgierige developer! Leuk dat je een kijkje neemt onder de motorkap.', 'color: #94a3b8; font-family: monospace; font-size: 12px;');
+    console.log('%cAls je op zoek bent naar een stagiair die dit soort details waardeert — mijn contactgegevens staan op /contact.html', 'color: #eceff4; font-family: monospace; font-size: 12px;');
+    console.log('%cPS: probeer eens de Konami code... ↑ ↑ ↓ ↓ ← → ← → B A', 'color: #ff5500; font-family: monospace; font-size: 12px;');
+
+    /* EASTER EGG: KONAMI CODE → VIDEO MODAL*/
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIndex = 0;
+
+    const eggModal = document.getElementById('easter-egg-modal');
+    const eggIframe = document.getElementById('egg-modal-iframe');
+    const eggCloseBtn = document.getElementById('egg-modal-close');
+
+    const EASTER_EGG_VIDEO_ID = 'xvFZjo5PgG0';
+
+    function openEggModal() {
+        if (!eggModal || !eggIframe) return;
+        eggIframe.src = `https://www.youtube.com/embed/${EASTER_EGG_VIDEO_ID}?autoplay=1`;
+        eggModal.classList.add('visible');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeEggModal() {
+        if (!eggModal || !eggIframe) return;
+        eggModal.classList.remove('visible');
+        eggIframe.src = '';
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === konamiCode[konamiIndex]) {
+            konamiIndex++;
+            if (konamiIndex === konamiCode.length) {
+                document.body.classList.add('easter-egg-active');
+                openEggModal();
+                konamiIndex = 0;
+            }
+        } else {
+            konamiIndex = 0;
+        }
+    });
+
+    if (eggCloseBtn) {
+        eggCloseBtn.addEventListener('click', closeEggModal);
+    }
+
+    if (eggModal) {
+        eggModal.querySelector('.egg-modal-overlay').addEventListener('click', closeEggModal);
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && eggModal && eggModal.classList.contains('visible')) {
+            closeEggModal();
+        }
+    });
 });
