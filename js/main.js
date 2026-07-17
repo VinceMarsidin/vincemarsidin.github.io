@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const eggIframe = document.getElementById('egg-modal-iframe');
     const eggCloseBtn = document.getElementById('egg-modal-close');
 
-    const EASTER_EGG_VIDEO_ID = 'xvFZjo5PgG0';
+    const EASTER_EGG_VIDEO_ID = 'dQw4w9WgXcQ';
 
     function openEggModal() {
         if (!eggModal || !eggIframe) return;
