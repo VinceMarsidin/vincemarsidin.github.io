@@ -103,46 +103,6 @@
 
 /* SOCIALS INFO */
 .info-channels {
-    width: 100%;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem 2rem;
-}
-
-.info-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.info-label {
-    font-family: var(--font-code);
-    color: var(--accent);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.info-link {
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 1.05rem;
-    transition: color 0.2s ease, text-shadow 0.2s ease, padding-left 0.2s ease;
-    align-self: flex-start;
-}
-
-.info-link:hover {
-    color: var(--accent);
-    text-shadow: 0 0 8px var(--accent-glow);
-    padding-left: 4px;
-}
-
-
-
-.info-channels {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
